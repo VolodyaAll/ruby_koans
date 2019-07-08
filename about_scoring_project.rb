@@ -39,8 +39,8 @@ def score(dice)
   
   number_counts.each do |number, count|
     if count >= 3
-      result += number * 100 if number != 1
-      result += 1000 if number == 1
+      number == 1 ? result += 1000 : result += number * 100
+      
       count -= 3
     end
     
